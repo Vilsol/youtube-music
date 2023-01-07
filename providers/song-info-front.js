@@ -51,7 +51,8 @@ module.exports = () => {
 				".byline.ytmusic-player-bar > .yt-simple-endpoint"
 			).find(e => e.href?.includes("browse"))?.textContent;
 
-			data.videoDetails.elapsedSeconds = Math.floor(video.currentTime);
+			// data.videoDetails.elapsedSeconds = Math.floor(video.currentTime);
+			data.videoDetails.elapsedSeconds = 0;
 			data.videoDetails.isPaused = false;
 			ipcRenderer.send("video-src-changed", JSON.stringify(data));
 		}
